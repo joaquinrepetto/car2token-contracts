@@ -7,7 +7,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract ProofOfCredit is ERC721URIStorage, Ownable {
     uint256 public nextTokenId;
 
-    constructor() ERC721("ProofOfCredit", "PoC") {}
+    constructor(
+        address initialOwner
+    ) ERC721("ProofOfCredit", "PoC") Ownable(initialOwner) {
+        // Additional initialization can go here
+    }
 
     function mintTo(address recipient, string memory uri) public onlyOwner {
         _safeMint(recipient, nextTokenId);
