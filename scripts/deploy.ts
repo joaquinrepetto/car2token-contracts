@@ -29,6 +29,11 @@ async function main() {
   console.log(
     `Transferred all tokens (${totalSupply.toString()} SCT) to CapitalFund.`
   );
+
+  // Deploy ProofOfCredit (PoC)
+  const ProofOfCredit = await ethers.getContractFactory("ProofOfCredit");
+  const proofOfCredit = await ProofOfCredit.deploy(deployer);
+  console.log("ProofOfCredit contract address:", proofOfCredit.target);
 }
 
 main()
