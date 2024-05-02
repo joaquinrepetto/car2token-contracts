@@ -13,9 +13,12 @@ contract ProofOfCredit is ERC721URIStorage, Ownable {
         // Additional initialization can go here
     }
 
+    event TokenMinted(uint256 tokenId, address recipient);
+
     function mintTo(address recipient, string memory uri) public onlyOwner {
         _safeMint(recipient, nextTokenId);
         _setTokenURI(nextTokenId, uri);
+        emit TokenMinted(nextTokenId, recipient);
         nextTokenId++;
     }
 }
