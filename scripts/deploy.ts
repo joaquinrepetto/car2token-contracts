@@ -23,7 +23,12 @@ async function main() {
   console.log("CapitalFund contract address:", capitalFund.target);
 
   // Transfer all minted tokens from deployer to CapitalFund
-  const totalSupply = await scartToken.totalSupply();
+  // const totalSupply = await scartToken.totalSupply();
+  const decimals = 18; // Adjust this based on your token's decimals
+  const amount = "1000000"; // The token amount in human-readable form (not in wei or smallest unit)
+  const totalSupply = ethers.parseUnits(amount, decimals);
+
+  console.log(`Total Supply to transfer: ${totalSupply.toString()} SCT`);
   const transferTx = await scartToken.transfer(capitalFund.target, totalSupply);
   await transferTx.wait(); // Wait for the transaction to be mined
   console.log(

@@ -9,9 +9,7 @@ contract ProofOfCredit is ERC721URIStorage, Ownable {
 
     constructor(
         address initialOwner
-    ) ERC721("ProofOfCredit", "PoC") Ownable(initialOwner) {
-        // Additional initialization can go here
-    }
+    ) ERC721("ProofOfCredit", "PoC") Ownable(initialOwner) {}
 
     event TokenMinted(uint256 tokenId, address recipient);
 
