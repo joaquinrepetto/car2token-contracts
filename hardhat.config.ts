@@ -13,12 +13,20 @@ const config: HardhatUserConfig = {
     //     ? [process.env.ROOTSTOCK_MAINNET_PRIVATE_KEY]
     //     : [],
     // },
-    rskTestnet: {
-      url: "https://public-node.testnet.rsk.co",
-      chainId: 31,
-      gasPrice: 60000000,
-      accounts: process.env.ROOTSTOCK_TESTNET_PRIVATE_KEY
-        ? [process.env.ROOTSTOCK_TESTNET_PRIVATE_KEY]
+    amoy: {
+      url: "https://rpc-amoy.polygon.technology/",
+      // chainId: 31,
+      // gasPrice: 60000000,
+      accounts: process.env.TESTNET_PRIVATE_KEY
+        ? [process.env.TESTNET_PRIVATE_KEY]
+        : [],
+    },
+    prod: {
+      url: "https://polygon-rpc.com/",
+      // chainId: 31,
+      // gasPrice: 60000000,
+      accounts: process.env.TESTNET_PRIVATE_KEY
+        ? [process.env.TESTNET_PRIVATE_KEY]
         : [],
     },
     hardhat: {
