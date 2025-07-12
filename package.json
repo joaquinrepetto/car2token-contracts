@@ -24,7 +24,7 @@
     "typescript": ">=4.5.0"
   },
   "dependencies": {
-    "@nomicfoundation/hardhat-ignition": "^0.15.1",
+    "@nomicfoundation/hardhat-ignition": "^0.15.11",
     "@openzeppelin/contracts": "^5.0.2",
     "axios": "^1.6.8",
     "dotenv": "^16.4.5"
