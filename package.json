@@ -27,6 +27,6 @@
     "@nomicfoundation/hardhat-ignition": "^0.15.1",
     "@openzeppelin/contracts": "^5.0.2",
     "axios": "^1.6.8",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.5.0"
   }
 }
